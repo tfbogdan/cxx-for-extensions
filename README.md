@@ -1,4 +1,4 @@
-# Proposed extensions to C+ `for` loops
+# Proposed extensions to C++ `for` loops
 
 ## Background
 
@@ -111,7 +111,7 @@ for (auto v: vec) {
 }
 ```
 
-This variable will be const in the body of the loop and it would always be the index inside the parent loops closest to where the variable is used. to be consistent with C++'s goal of only forcing you to pay for what you use, it would only be introduced by the compiler when used.
+This variable will be const in the body of the loop and it would always be the index inside the parent loops closest to where the variable is used. To be consistent with C++'s goal of only forcing you to pay for what you use, it would only be introduced by the compiler when used.
 
 It's declared in the `std` namespace to avoid clashes thus making it's fairly backwards compatible.
 

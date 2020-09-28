@@ -184,26 +184,6 @@ assert(output.str() == "This is a text  that is to serve as an example");
 
 ```
 
-With this construct and `std::for_index`, we can rewrite the parser once more to become a bit more efficient:
-
-```C++
-std::string_view the_string = "This is a text (not very long) that is to serve as an example(perhaps not the best one)";
-std::ostringstream output;
-for (const auto c: the_string) {
-    if (c != '(') {
-        auto starting_index = std::for_index;
-        continue while (c != '(') ;
-        else output << the_string.substr(starting_index, std::for_index);
-    } else {
-        continue while (c != ')');
-        catch throw std::runtime_error("Expected ')' found end of string.");
-    }
-}
-
-assert(output.str() == "This is a text  that is to serve as an example");
-
-```
-
 ### `continue for`
 
 _To be defined_ but very similar to `continue while` with the added benefit of being able to nest an arbitrary level of `continue for` loops.
